@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "name": "Toyota Corolla SE Manua",
+    "type": "Sedan",
+    "price": 200,
+    "year": 2018,
+    "images": "./corola.png",
+    "brand": "Toyota",
+    "doors" : 4
+  },
+  {
+    "id": 2,
+    "name": "Volkswagen Polo 1.0 MPI",
+    "type": "Hatch",
+    "price": 140,
+    "year": 2021,
+    "images": "./polo.png",
+    "brand": "Volkswagen"
+    ,
+    "doors" : 4
+  },
+  {
+    "id": 3,
+    "name": " Chevrolet Onix",
+    "type": "Hatch",
+    "price": 170,
+    "year": 2017,
+    "images": "./onix.png",
+    "brand": "Chevrolet"
+    ,
+    "doors" : 4
+  },
+  {
+    "id": 4,
+    "name": " Chevrolet Corsa ",
+    "type": "Hatch",
+    "price": 90,
+    "year": 2008,
+    "images": "./corsa.png",
+    "brand": "Chevrolet"
+    ,
+    "doors" : 4
+  },
+  {
+    "id": 5,
+    "name": " Fiat Argo ",
+    "type": "Hatch",
+    "price": 100,
+    "year": 2019,
+    "images": "./argo.png",
+    "brand": "Fiat "
+    ,
+    "doors" : 4
+  }
+  
+]
