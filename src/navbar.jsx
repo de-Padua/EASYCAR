@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function navbar({ onlineUser, handleExitUser }) {
   console.log(onlineUser);
 
-  const handlePath = onlineUser ? "/userProfile" : "/userAuth";
+  const handlePath = onlineUser ? "/easycar/userProfile" : "/easycar/userAuth";
   const exitButton = onlineUser ? <h5 className="exit-btn"> Log out </h5> : "";
 
   return (
@@ -17,13 +17,13 @@ export default function navbar({ onlineUser, handleExitUser }) {
       </div>
       <div className="links-buttons">
         <div className="links">
-          <Link to="/" className="link">
+          <Link to="/easycar" className="link">
             Home
           </Link>
-          <Link to="/cataloge" className="link">
+          <Link to="/easycar/cataloge" className="link">
             Cataloge
           </Link>
-          <Link to="/about" className="link">
+          <Link to="/easycar/about" className="link">
             About
           </Link>
         </div>
@@ -37,7 +37,7 @@ export default function navbar({ onlineUser, handleExitUser }) {
         <div
           onClick={() => {
             handleExitUser();
-            window.location = "/";
+            window.location = "/easycar";
           }}
         >
           {exitButton}

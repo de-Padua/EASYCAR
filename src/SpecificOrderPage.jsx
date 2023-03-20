@@ -22,7 +22,7 @@ export default function SpecificOrderPage() {
     //save to current user new orders array
     const newObjUser = { ...currentUser, orders: newOrdersArr };
     localStorage.setItem("activeUser", JSON.stringify(newObjUser));
-    window.location = "/userProfile";
+    window.location = "/easycar/userProfile";
   }
 
   return (
@@ -59,7 +59,7 @@ export default function SpecificOrderPage() {
             <div className="btn-div-coitainer">
               <button
                 onClick={() => {
-                  window.location = "/userProfile";
+                  window.location = "/easycar/userProfile";
                 }}
               >
                 Back

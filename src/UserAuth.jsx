@@ -26,7 +26,7 @@ export default function UserAuth() {
     if (user) {
       setOnline(localStorage.setItem("activeUser", JSON.stringify(user)));
       setTimeout(() => {
-        window.location = "/";
+        window.location = "/easycar";
       }, 1000);
     } else {
       console.log("Something went wrong");
@@ -41,7 +41,7 @@ export default function UserAuth() {
             <button
               className="goBack"
               onClick={() => {
-                window.location = "/";
+                window.location = "/easycar";
               }}
             >
               <AiOutlineLeft />
@@ -86,7 +86,7 @@ export default function UserAuth() {
             <p>Not subscribed yet ?</p>
             <a
               onClick={() => {
-                window.location = "/create-account";
+                window.location = "/easycar/create-account";
               }}
             >
               Create a account now.

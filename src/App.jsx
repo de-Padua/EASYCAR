@@ -13,15 +13,18 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cataloge" element={<Catalogue />} />
-        <Route path="/userAuth" element={<UserAuth />} />
-        <Route path="/create-account" element={<NewAccount />} />
-        <Route path="/userProfile" element={<UserProfile />} />
-        <Route path="/order-page" element={<OrderPage />} />
-        <Route path="/order-complete-page" element={<Ordercomplete />} />
-        <Route path="/order" element={<SpecificOrderPage />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/easycar" element={<Home />} />
+        <Route path="/easycar/cataloge" element={<Catalogue />} />
+        <Route path="/easycar/userAuth" element={<UserAuth />} />
+        <Route path="/easycar/create-account" element={<NewAccount />} />
+        <Route path="/easycar/userProfile" element={<UserProfile />} />
+        <Route path="/easycar/order-page" element={<OrderPage />} />
+        <Route
+          path="/easycar/order-complete-page"
+          element={<Ordercomplete />}
+        />
+        <Route path="/easycar/order" element={<SpecificOrderPage />} />
+        <Route path="/easycar/about" element={<About />} />
       </Routes>
     </>
   );

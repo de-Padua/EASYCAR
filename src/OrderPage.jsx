@@ -109,7 +109,7 @@ export default function OrderPage() {
       createNewOrderIntoUserData(order);
 
       setTimeout(() => {
-        window.location = "/order-complete-page";
+        window.location = "/easycar/order-complete-page";
       }, 2000);
     } else {
       toast.error("Something went wrong", {
@@ -179,7 +179,7 @@ export default function OrderPage() {
                       setUnderAge((oldValue) => !oldValue);
                     }}
                   />{" "}
-                  <span>I'm confirm that i'm 18+ years old</span>
+                  <span>I confirm that i'm 18+ years old</span>
                 </div>
                 <div>
                   <input
@@ -188,7 +188,7 @@ export default function OrderPage() {
                       setReadTos((oldValue) => !oldValue);
                     }}
                   />{" "}
-                  <span>I'm confirm that i read the TOS</span>
+                  <span>I confirm that i read the TOS</span>
                 </div>
               </form>
             </div>

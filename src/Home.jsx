@@ -86,7 +86,7 @@ export default function Home() {
         <div className="buton-cataloge-home">
           <button
             onClick={() => {
-              window.location = "/cataloge";
+              window.location = "/easycar/cataloge";
             }}
           >
             See our catalogue

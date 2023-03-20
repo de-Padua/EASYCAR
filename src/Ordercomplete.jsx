@@ -23,7 +23,7 @@ export default function Ordercomplete() {
           </p>
           <button
             onClick={() => {
-              window.location = "/cataloge";
+              window.location = "/easycar/cataloge";
             }}
           >
             Back to catalogue

@@ -42,9 +42,9 @@ export default function Catalogue() {
   function handleBook(cars) {
     if (isActive) {
       localStorage.setItem("selectedCar", JSON.stringify(cars));
-      window.location = "/order-page";
+      window.location = "/easycar/order-page";
     } else {
-      window.location = "/userAuth";
+      alert("You need to log in first");
     }
   }
 
@@ -84,7 +84,7 @@ export default function Catalogue() {
           </h4>
         </div>
         <div className="price-car">
-          <h2>For {formatter.format(cars.price)} / day</h2>
+          <h2>For {formatter.format(cars.price)} / week</h2>
         </div>
         <div>
           <button
