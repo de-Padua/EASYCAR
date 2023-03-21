@@ -37,7 +37,7 @@ export default function navbar({ onlineUser, handleExitUser }) {
         <div
           onClick={() => {
             handleExitUser();
-            window.location = "/easycar";
+            location.assign("/easycar");
           }}
         >
           {exitButton}

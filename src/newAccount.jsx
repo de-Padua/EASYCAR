@@ -1,6 +1,7 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import "./App.css";
 
 export default function newAccount() {
   const [newUser, setNewUser] = useState(null);
@@ -33,7 +34,7 @@ export default function newAccount() {
       } else {
         setUserList((oldValue) => [...oldValue, newUser]);
         setTimeout(() => {
-          window.location = "/easycar/userAuth";
+          location.assign("/easycar/userAuth");
         }, 4000);
       }
     }
@@ -134,7 +135,7 @@ export default function newAccount() {
         <div className="newAccount">
           <a
             onClick={() => {
-              window.location = "/easycar/userAuth";
+              location.assign("/easycar/userAuth");
             }}
           >
             I have a account

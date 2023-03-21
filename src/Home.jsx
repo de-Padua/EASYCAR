@@ -7,9 +7,11 @@ import Apresentation from "./apresentation";
 import { BiCaretDown } from "react-icons/bi";
 
 export default function Home() {
-  const [car, setCars] = useState(localStorage.getItem("cars") || []);
+  const [car, setCars] = useState(
+    JSON.parse(localStorage.getItem("cars")) || []
+  );
   const [getActiveuser, setGetActiveuser] = useState(
-    JSON.parse(localStorage.getItem("activeUser")) || []
+    JSON.parse(localStorage.getItem("activeUser")) || "offline"
   );
   const [isActive, setActivity] = useState(null);
   useEffect(() => {
@@ -86,7 +88,7 @@ export default function Home() {
         <div className="buton-cataloge-home">
           <button
             onClick={() => {
-              window.location = "/easycar/cataloge";
+              location.assign("/easycar/cataloge");
             }}
           >
             See our catalogue

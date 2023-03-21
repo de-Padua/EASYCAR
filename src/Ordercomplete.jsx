@@ -1,6 +1,7 @@
 import React from "react";
 import { BiCheckCircle } from "react-icons/bi";
 import Navbar from "./navbar";
+import "./App.css";
 
 export default function Ordercomplete() {
   return (
@@ -23,7 +24,7 @@ export default function Ordercomplete() {
           </p>
           <button
             onClick={() => {
-              window.location = "/easycar/cataloge";
+              location.assign("/easycar/cataloge");
             }}
           >
             Back to catalogue

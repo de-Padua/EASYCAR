@@ -109,7 +109,7 @@ export default function OrderPage() {
       createNewOrderIntoUserData(order);
 
       setTimeout(() => {
-        window.location = "/easycar/order-complete-page";
+        location.assign("/easycar/order-complete-page");
       }, 2000);
     } else {
       toast.error("Something went wrong", {

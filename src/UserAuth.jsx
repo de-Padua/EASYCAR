@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { AiOutlineLeft } from "react-icons/ai";
+import "./App.css";
 
 export default function UserAuth() {
   const [newUser, setNewUser] = useState(null);
@@ -26,7 +27,7 @@ export default function UserAuth() {
     if (user) {
       setOnline(localStorage.setItem("activeUser", JSON.stringify(user)));
       setTimeout(() => {
-        window.location = "/easycar";
+        location.assign("/easycar");
       }, 1000);
     } else {
       console.log("Something went wrong");
@@ -41,7 +42,7 @@ export default function UserAuth() {
             <button
               className="goBack"
               onClick={() => {
-                window.location = "/easycar";
+                location.assign("/easycar");
               }}
             >
               <AiOutlineLeft />
@@ -86,7 +87,7 @@ export default function UserAuth() {
             <p>Not subscribed yet ?</p>
             <a
               onClick={() => {
-                window.location = "/easycar/create-account";
+                location.assign("/easycar/create-account");
               }}
             >
               Create a account now.

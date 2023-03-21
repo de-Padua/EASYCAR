@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { MdEject } from "react-icons/md";
+import "./App.css";
 
 export default function SpecificOrderPage() {
   const [order, setOrder] = useState(
@@ -17,12 +18,11 @@ export default function SpecificOrderPage() {
     const newOrdersArr = currentUser.orders.filter((orders) => {
       return orders.id != order.id;
     });
-    console.log(newOrdersArr);
 
     //save to current user new orders array
     const newObjUser = { ...currentUser, orders: newOrdersArr };
     localStorage.setItem("activeUser", JSON.stringify(newObjUser));
-    window.location = "/easycar/userProfile";
+    location.assign("/easycar/userProfile");
   }
 
   return (
@@ -59,7 +59,7 @@ export default function SpecificOrderPage() {
             <div className="btn-div-coitainer">
               <button
                 onClick={() => {
-                  window.location = "/easycar/userProfile";
+                  location.assign("/easycar/userProfile");
                 }}
               >
                 Back

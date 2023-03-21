@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import Navbar from "./navbar";
+import "./App.css";
 
 export default function Catalogue() {
   const [vehicles, getVehicles] = useState(
@@ -42,7 +43,7 @@ export default function Catalogue() {
   function handleBook(cars) {
     if (isActive) {
       localStorage.setItem("selectedCar", JSON.stringify(cars));
-      window.location = "/easycar/order-page";
+      location.assign("/easycar/order-page");
     } else {
       alert("You need to log in first");
     }
@@ -69,7 +70,7 @@ export default function Catalogue() {
 
   const mappedVehicles = filteredItems.map((cars) => {
     return (
-      <div className="car">
+      <div className="car" key={cars.name}>
         <div>
           <h5 className="typo">
             {cars.type} / {cars.brand}

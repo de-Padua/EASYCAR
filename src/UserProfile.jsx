@@ -9,6 +9,7 @@ import {
   BiDetail,
   BiTrip,
 } from "react-icons/bi";
+import "./App.css";
 
 export default function UserProfile() {
   const [isActive, setActivity] = useState(null);
@@ -36,7 +37,7 @@ export default function UserProfile() {
   }
   function handleOrderPage(x) {
     localStorage.setItem("orderSelected", JSON.stringify(x));
-    window.location = "/easycar/order";
+    location.assign("/easycar/order");
   }
   const userOrders = getActiveuser.orders.map((order) => {
     return (
@@ -79,7 +80,6 @@ export default function UserProfile() {
       </div>
     );
   });
-  console.log(userOrders);
 
   /// profile logic
   return (
