@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import Navbar from "./navbar";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 export default function Catalogue() {
   const [vehicles, getVehicles] = useState(
@@ -21,6 +22,7 @@ export default function Catalogue() {
     JSON.parse(localStorage.getItem("activeUser")) || []
   );
   const [isActive, setActivity] = useState(null);
+  
   useEffect(() => {
     if (getActiveuser != "offline") {
       setActivity(true);
@@ -43,7 +45,6 @@ export default function Catalogue() {
   function handleBook(cars) {
     if (isActive) {
       localStorage.setItem("selectedCar", JSON.stringify(cars));
-      location.assign("/easycar/order-page");
     } else {
       alert("You need to log in first");
     }
@@ -88,13 +89,16 @@ export default function Catalogue() {
           <h2>For {formatter.format(cars.price)} / week</h2>
         </div>
         <div>
-          <button
-            onClick={() => {
-              handleBook(cars);
-            }}
-          >
-            Book now
-          </button>
+          <Link to="/easycar/order-page">
+            <button
+              onClick={() => {
+                handleBook(cars);
+              }}
+            >
+              Book now
+            </button>{" "}
+          </Link>
+          ;
         </div>
       </div>
     );

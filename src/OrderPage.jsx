@@ -4,9 +4,20 @@ import { GiCarDoor, GiCarWheel } from "react-icons/gi";
 import Navbar from "./navbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link, useLocation } from "react-router-dom";
 
 import "./App.css";
 export default function OrderPage() {
+  //pages transitioning logic
+  const [isPayd, setPayment] = useState(false);
+
+  function setSucesfullPaymentPage() {
+    setPayment((oldValue) => !oldValue);
+  }
+
+  const hidePage = isPayd ? { opacity: 0 } : { opacity: 1 };
+  const showPage = isPayd ? { opacity: 1 } : { opacity: 0 };
+
   const [cars, setAvailableCars] = useState(
     JSON.parse(localStorage.getItem("cars")) || []
   );
@@ -58,19 +69,21 @@ export default function OrderPage() {
     console.log("sexo");
     setActivity(false);
   }
-  ///toast
+  ///location logic
+
+  const location = useLocation();
 
   //order logic
 
-  const departureValue = useRef();
   const returnValue = useRef();
   const returnLocation = useRef();
+  const departureValue = useRef();
   const departureLocation = useRef();
-  const [paymentMethod, setPaymentMethod] = useState("Undefined");
-  const [departudeDetails, setDepartureDails] = useState([]);
   const [readTos, setReadTos] = useState(false);
   const [underAge, setUnderAge] = useState(false);
   const [ordersArr, setOrderArr] = useState(activeUser.orders);
+  const [paymentMethod, setPaymentMethod] = useState("Undefined");
+  const [departudeDetails, setDepartureDails] = useState([]);
 
   function elimanteDuplicates(item) {
     const found = departudeDetails.find((x) => {
@@ -107,10 +120,9 @@ export default function OrderPage() {
       };
 
       createNewOrderIntoUserData(order);
-
       setTimeout(() => {
-        location.assign("/easycar/order-complete-page");
-      }, 2000);
+        setSucesfullPaymentPage();
+      }, [1000]);
     } else {
       toast.error("Something went wrong", {
         position: "top-right",
@@ -124,7 +136,6 @@ export default function OrderPage() {
       });
     }
   }
-
   function createNewOrderIntoUserData(order) {
     //get current user
     setOrderArr((oldValue) => [...oldValue, order]);
@@ -163,9 +174,9 @@ export default function OrderPage() {
         theme="light"
       />
       <Navbar onlineUser={isActive} handleExitUser={handleExit} />
-      <div className="a1">
+      <div className="a1" style={hidePage}>
         <div className="main-container-order">
-          <div className=" container right-container-order">
+          <div className="container right-container-order">
             <div className="">
               <h2>Details :</h2>
               <h4>{formatter.format(selectCar.price)} / week</h4>
@@ -346,6 +357,28 @@ export default function OrderPage() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="order-complete-main-container" style={showPage}>
+        <div className="center-div-order">
+          <img
+            src="https://icons.veryicon.com/png/o/system/revision-background/order-details-order-status.png"
+            width={"300px"}
+          />
+          <h2>Your order was completed and is already available!</h2>
+          <p className="email-confirmation-msg">
+            You will be receiving a confirmation email with order details
+          </p>
+          <Link to="/easycar">
+            <button
+              onClick={() => {
+                location.assign("/easycar/cataloge");
+              }}
+            >
+              Back to catalogue
+            </button>
+          </Link>
         </div>
       </div>
     </>

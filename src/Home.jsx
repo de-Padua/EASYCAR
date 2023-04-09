@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import Navbar from "./navbar";
 import Apresentation from "./apresentation";
 import { BiCaretDown } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [car, setCars] = useState(
@@ -86,12 +87,8 @@ export default function Home() {
           />
         </div>
         <div className="buton-cataloge-home">
-          <button
-            onClick={() => {
-              location.assign("/easycar/cataloge");
-            }}
-          >
-            See our catalogue
+          <button>
+            <Link to="/easycar/cataloge"> See our catalogue </Link>
           </button>
         </div>
         <div className="disclaymer">

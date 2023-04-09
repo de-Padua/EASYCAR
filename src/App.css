@@ -393,6 +393,10 @@ width: 89%;
 .car-container {
   width: 80%;
 }
+.right-container-order{
+  z-index: 100;
+}
+
 .title-opts {
   font-size: 1.4rem;
   font-weight: bold;
@@ -442,6 +446,7 @@ select {
   font-weight: bold;
 }
 .main-container-order {
+  z-index: 10;
   padding: 20px;
   position: absolute;
   width: fit-content;
@@ -486,6 +491,7 @@ select {
   margin: 0;
 }
 .a1 {
+  z-index: 1990;
   display: flex;
   align-self: center;
   justify-content: center;

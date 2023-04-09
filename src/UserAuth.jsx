@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { AiOutlineLeft } from "react-icons/ai";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 export default function UserAuth() {
   const [newUser, setNewUser] = useState(null);
@@ -85,13 +86,8 @@ export default function UserAuth() {
 
           <div className="newAccount">
             <p>Not subscribed yet ?</p>
-            <a
-              onClick={() => {
-                location.assign("/easycar/create-account");
-              }}
-            >
-              Create a account now.
-            </a>
+
+            <Link to="/easycar/create-account"> Create a account now.</Link>
           </div>
         </div>
 
