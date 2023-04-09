@@ -17,7 +17,7 @@ export default function navbar({ onlineUser, handleExitUser }) {
       </div>
       <div className="links-buttons">
         <div className="links">
-          <Link to="/EASYCAR" className="link">
+          <Link to="/EASYCAR/git addd" className="link">
             Home
           </Link>
           <Link to="/EASYCAR/cataloge" className="link">
@@ -37,7 +37,7 @@ export default function navbar({ onlineUser, handleExitUser }) {
         <div
           onClick={() => {
             handleExitUser();
-            location.assign("/EASYCAR");
+            location.assign("/EASYCAR/");
           }}
         >
           {exitButton}

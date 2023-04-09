@@ -13,7 +13,7 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/EASYCAR" element={<Home />} />
+        <Route path="/EASYCAR/" element={<Home />} />
         <Route path="/EASYCAR/cataloge" element={<Catalogue />} />
         <Route path="/EASYCAR/userAuth" element={<UserAuth />} />
         <Route path="/EASYCAR/create-account" element={<NewAccount />} />

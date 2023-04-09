@@ -28,7 +28,7 @@ export default function UserAuth() {
     if (user) {
       setOnline(localStorage.setItem("activeUser", JSON.stringify(user)));
       setTimeout(() => {
-        location.assign("/EASYCAR");
+        location.assign("/EASYCAR/");
       }, 1000);
     } else {
       console.log("Something went wrong");
@@ -43,7 +43,7 @@ export default function UserAuth() {
             <button
               className="goBack"
               onClick={() => {
-                location.assign("/EASYCAR");
+                location.assign("/EASYCAR/");
               }}
             >
               <AiOutlineLeft />

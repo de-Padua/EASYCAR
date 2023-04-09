@@ -37,7 +37,7 @@ export default function UserProfile() {
   }
   function handleOrderPage(x) {
     localStorage.setItem("orderSelected", JSON.stringify(x));
-    location.assign("/easycar/order");
+    location.assign("/EASYCAR/order");
   }
   const userOrders = getActiveuser.orders.map((order) => {
     return (
