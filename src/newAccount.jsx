@@ -34,7 +34,7 @@ export default function newAccount() {
       } else {
         setUserList((oldValue) => [...oldValue, newUser]);
         setTimeout(() => {
-          location.assign("/easycar/userAuth");
+          location.assign("/EASYCAR/userAuth");
         }, 4000);
       }
     }
@@ -135,7 +135,7 @@ export default function newAccount() {
         <div className="newAccount">
           <a
             onClick={() => {
-              location.assign("/easycar/userAuth");
+              location.assign("/EASYCAR/userAuth");
             }}
           >
             I have a account

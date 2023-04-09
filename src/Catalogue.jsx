@@ -22,7 +22,7 @@ export default function Catalogue() {
     JSON.parse(localStorage.getItem("activeUser")) || []
   );
   const [isActive, setActivity] = useState(null);
-  
+
   useEffect(() => {
     if (getActiveuser != "offline") {
       setActivity(true);
@@ -89,7 +89,7 @@ export default function Catalogue() {
           <h2>For {formatter.format(cars.price)} / week</h2>
         </div>
         <div>
-          <Link to="/easycar/order-page">
+          <Link to="/EASYCAR/order-page">
             <button
               onClick={() => {
                 handleBook(cars);

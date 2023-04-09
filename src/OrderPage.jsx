@@ -370,10 +370,10 @@ export default function OrderPage() {
           <p className="email-confirmation-msg">
             You will be receiving a confirmation email with order details
           </p>
-          <Link to="/easycar">
+          <Link to="/EASYCAR">
             <button
               onClick={() => {
-                location.assign("/easycar/cataloge");
+                location.assign("/EASYCAR/cataloge");
               }}
             >
               Back to catalogue

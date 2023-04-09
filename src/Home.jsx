@@ -88,7 +88,7 @@ export default function Home() {
         </div>
         <div className="buton-cataloge-home">
           <button>
-            <Link to="/easycar/cataloge"> See our catalogue </Link>
+            <Link to="/EASYCAR/cataloge"> See our catalogue </Link>
           </button>
         </div>
         <div className="disclaymer">
