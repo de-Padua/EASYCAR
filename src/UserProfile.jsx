@@ -36,48 +36,49 @@ export default function UserProfile() {
     setActivity(false);
   }
   function handleOrderPage(x) {
-    localStorage.setItem("orderSelected", JSON.stringify(x));
     location.assign("/EASYCAR/order");
   }
   const userOrders = getActiveuser.orders.map((order) => {
     return (
-      <div
-        className=""
+      <Link
         onClick={() => {
-          handleOrderPage(order);
+          localStorage.setItem("orderSelected", JSON.stringify(order));
         }}
+        g
       >
-        <div className="order-obt-profile">
-          <div className="testediv-1">
-            <p>
-              {" "}
-              <BiArrowToRight className="departure_icon" />
-              {order.order.departure_location}
-            </p>
-            <p>
-              {" "}
-              <BiArrowToLeft className="return_icon" />
-              {order.order.return_location}
-            </p>
-          </div>
-          <div className="testediv">
-            <h4>
-              <BiTrip className="trip" />
-              {order.details.car.name}
-            </h4>
-            <p>
-              {order.details.payment === "Card" ? (
-                <BiCreditCard className="default-money" />
-              ) : "Money" ? (
-                <BiMoney className="default-money" />
-              ) : (
-                <BiDetail className="default-money" />
-              )}{" "}
-              {order.details.payment}
-            </p>
+        <div className="">
+          <div className="order-obt-profile">
+            <div className="testediv-1">
+              <p>
+                {" "}
+                <BiArrowToRight className="departure_icon" />
+                {order.order.departure_location}
+              </p>
+              <p>
+                {" "}
+                <BiArrowToLeft className="return_icon" />
+                {order.order.return_location}
+              </p>
+            </div>
+            <div className="testediv">
+              <h4>
+                <BiTrip className="trip" />
+                {order.details.car.name}
+              </h4>
+              <p>
+                {order.details.payment === "Card" ? (
+                  <BiCreditCard className="default-money" />
+                ) : "Money" ? (
+                  <BiMoney className="default-money" />
+                ) : (
+                  <BiDetail className="default-money" />
+                )}{" "}
+                {order.details.payment}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     );
   });
 
